@@ -16,8 +16,7 @@ $(but).click(function(event) {
   for (let i = 0; i < elements.length; i++) {
   tovar.push(elements[i].textContent);
 }
-  let botToken = "5845688463:AAGBypQ-umXE0q-_rWHlxc5RgBo5ih8LwiE";
-  let chatId = "1322513664";
+
   $.ajax({
     url: "https://api.telegram.org/bot"+botToken+"/sendMessage?chat_id="+chatId,
     method: "POST",
