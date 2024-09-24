@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог</title>
+    <link rel="icon" href="{% static 'img/free-icon-keyboard-444168.png' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+</head>
+<style>
+    p, main a, h2, h1, h5{
+        font-family: Shentox;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: white;
+    }
+    footer a{
+        font-family: Shentox;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    header{
+        padding: 10px;
+        background-color: #6A0572;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+    }
+    header li{
+        display: inline-block;
+        font-weight: bolder;
+        text-decoration: none;
+    }
+    main{
+    max-width: 90%;
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: #6c6960;
+    color: white;
+    margin-top: 40px;
+    padding: 3%;
+    border-radius: 10px;
+}
+    {#.product-list {#}
+    {#    display: flex;#}
+    {#    flex-wrap: wrap;#}
+    {#    flex-direction: column;#}
+    {#    justify-content: end;#}
+    {#    list-style: none;#}
+    {#    padding: 0;#}
+    .product-item {
+        margin: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        {#text-align: start;#}
+        background-color: #9A0F98;
+    }
+    .product-item img{
+        {#float: right;#}
+        border: 2px solid black;
+        border-radius: 10px;
+        float: left;
+        margin-right: 10%;
+    }
+    .buy-now-button {
+        {#display: block;#}
+        margin-top: 10px;
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        max-width: 100px;
+    }
+    h1 {
+        color: black;
+        text-shadow: #9A0F98 5px 0 10px;
+        font-size: 60px;
+    }
+    #logotip{
+        width: 180px;
+        height: 80px;
+        margin-left: 100px;
+    }
+    .log-button{
+        vertical-align: middle;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: #6f42c1;
+        width: 100px;
+        height: 50px;
+        padding: 10px;
+        margin-left: 50px;
+        margin-top: 1%;
+        color: #ff6a48;
+        font-size: large;
+        font-weight: bold;
+    }
+    .korzina {
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        top: 3%;
+        right: 7%;
+    }
+    .korzina:hover{
+        transition: all 0.5s ease-in-out;
+        scale: 1.1;
+    }
+    table td{
+        margin: 10px 20px 10px 20px;
+    }
+</style>
+
+<body>
+<header class="row">
+    <ol>
+        <li>
+            <a href="{% url 'product_list' %}">
+                <img src="{% static 'img/logotip.png' %}" alt="logo" id="logotip">
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'view_cart' %}">
+            <img src="{% static 'img/korzina.png' %}" alt="korzina" class="korzina">
+        </a>
+        </li>
+        <li>
+            <div>
+        {% if not user.username %}
+            <a href="{% url 'login' %}"><button class="log-button">LOGIN</button></a>
+        {% else %}
+            <a href="{% url 'logout' %}"><button class="log-button">LOGOUT</button></a>
+        {% endif %}
+    </div>
+
+        </li>
+    <li>
+        <div>
+            <a href=""><button class="log-button"><img src="{% static 'img/vk-social-network-logo.png' %}" alt="" style="width: 30px; height: 30px"></button></a>
+        </div>
+    </li>
+    <li>
+        <div>
+            <a href=""><button class="log-button"><img src="{% static 'img/telegram.png' %}" alt="" style="width: 30px; height: 30px"></button></a>
+        </div>
+    </li>
+    <li>
+        <div>
+            <a href=""><button class="log-button"><img src="{% static 'img/whatsapp.png' %}" alt="" style="width: 30px; height: 30px"></button></a>
+        </div>
+    </li>
+    <li>
+        <div>
+            <a href=""><button class="log-button"><img src="{% static 'img/twitter.png' %}" alt="" style="width: 30px; height: 30px"></button></a>
+        </div>
+    </li>
+    </ol>
+</header>
+
+<main>
+<div>
+                <h1>О нас</h1>
+    <br>
+                <p>Добро пожаловать на наш сайт, посвященный кастомным механическим клавиатурам! Мы - команда энтузиастов, создающая уникальные клавиатуры для тех, кто ценит индивидуальность и качество. Наша миссия - предоставить вам возможность выразить свою индивидуальность через вашу клавиатуру, которая будет соответствовать вашему стилю и потребностям.</p>
+                <p>Мы специализируемся на изготовлении кастомных механических клавиатур, которые создаются с любовью к деталям и вниманием к каждой кнопке. Наш опытный коллектив собирает клавиатуры вручную, используя только лучшие компоненты и материалы. Мы стремимся к тому, чтобы каждая клавиатура, созданная нами, была не только красивой, но и функциональной, а также прослужила вам долгие годы.</p>
+                <p>Наши клавиатуры - это не просто инструмент работы, но и объект искусства, который вы будете с гордостью показывать своим друзьям и коллегам. Мы предлагаем широкий выбор дизайнов и настраиваемых опций, чтобы вы могли создать именно ту клавиатуру, которая отражает вашу уникальность.</p>
+            </div>
+    <br>
+<h1>Каталог продуктов</h1>
+    {% for product in products %}
+<div class="card mb-3 text-dark product-item" style="max-width: 70%;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ product.image }}" alt="{{ product.name }}" class="img-fluid rounded-start" width="300" height="200">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <p class="card-text">Цена: {{ product.price }} руб.</p>
+        <a class="buy-now-button" href="{% url 'add_to_cart' product.id %}">Добавить в корзину</a>
+      </div>
+    </div>
+  </div>
+</div>
+    {% endfor %}
+
+
+</main>
+
+<hr>
+<footer>
+    <div class="container" style="
+    margin-top: 20px;
+    margin-bottom: 50px;
+">
+        <h4>Контакты поддержки:</h4>
+        <table style="text-align: center">
+    <tr>
+        <td>8(956)345-12-56</td>
+    </tr>
+    <tr>
+        <td>custkey@support.com</td>
+    </tr>
+</table>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158848.3341968567!2d45.83209992420095!3d51.53146405787688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4114c709059bbc41%3A0x1c685156439035f6!2z0KHQsNGA0LDRgtC-0LIsINCh0LDRgNCw0YLQvtCy0YHQutCw0Y8g0L7QsdC7Lg!5e0!3m2!1sru!2sru!4v1707761232674!5m2!1sru!2sru" width="600" height="450" style="border:2px solid black; border-radius: 10px; margin-top: 40px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+    <hr>
+    <br>
+</footer>
+</body>
+</html>
