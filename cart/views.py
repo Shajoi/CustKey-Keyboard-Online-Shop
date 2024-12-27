@@ -4,7 +4,6 @@ from django.contrib.auth import logout
 from .form import *
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
-from docxtpl import DocxTemplate
 
 
 def product_list(request):
